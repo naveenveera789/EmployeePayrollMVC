@@ -1,0 +1,90 @@
+﻿@model IEnumerable<ModelLayer.Services.EmployeeModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" href="~/css/IndexEmployee.css" />
+
+<div class="header-content">
+    <div class="logo">
+        <a class="icon"> <img src="~/assets/logo.png"></a>
+        <div>
+            <span class="text1">EMPLOYEE</span><br>
+            <span class="text2">PAYROLL</span>
+        </div>
+    </div>
+</div>
+
+<div class="heading1">
+    <h2>Employee's List</h2>
+</div>
+
+<p>
+    <a asp-action="Create">Add New Employee</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.empId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.empName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.profileImg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.startDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.notes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.empId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.empName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.profileImg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.department)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.startDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.notes)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.empId  }) |
+                @Html.ActionLink("Details", "Details", new { id=item.empId  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.empId  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

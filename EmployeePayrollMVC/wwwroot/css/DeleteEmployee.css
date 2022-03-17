@@ -1,0 +1,42 @@
+﻿.header-content {
+    display: flex;
+    justify-content: start;
+}
+.heading1 {
+    text-align: center;
+}
+.heading2 {
+    text-align: center;
+}
+.logo {
+    display: flex;
+    flex-direction: row;
+}
+.text1 {
+    font: normal normal bold 22px/25px Montserrat;
+    text-transform: capitalize;
+    color: #82A70C;
+    text-align: left;
+    font-size: 18px;
+}
+.text2 {
+    font: normal normal bold 22px/25px Montserrat;
+    text-transform: capitalize;
+    color: #42515F;
+    text-align: left;
+    font-size: 18px;
+}
+.back {
+    display: flex;
+    justify-content: center;
+}
+.icon {
+    height: 45px;
+    width: 45px;
+    padding-top: 5px;
+}
+.row {
+    display: flex;
+    justify-content: center;
+    background-color: #f7f7f7;
+}

@@ -1,0 +1,79 @@
+﻿@model ModelLayer.Services.EmployeeModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<link rel="stylesheet" href="~/css/DetailsEmployee.css" />
+
+<div class="header-content">
+    <div class="logo">
+        <a class="icon"> <img src="~/assets/logo.png"></a>
+        <div>
+            <span class="text1">EMPLOYEE</span><br>
+            <span class="text2">PAYROLL</span>
+        </div>
+    </div>
+</div>
+
+<div class="heading1">
+    <h2>Details</h2>
+</div>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.empId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.empId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.empName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.empName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.profileImg)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.profileImg)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.gender)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.gender)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.department)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.department)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.startDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.startDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.notes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.notes)
+        </dd>
+    </dl>
+</div>
+<div class="back">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.empId }) |
+    <a asp-action="Index">Back to List</a>
+</div>
