@@ -24,13 +24,13 @@ namespace RepositoryLayer.Services
                 {
                     SqlCommand cmd = new SqlCommand("addEmployeeDetails", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@empName", employeeModel.empName);
-                    cmd.Parameters.AddWithValue("@profileImg", employeeModel.profileImg);
-                    cmd.Parameters.AddWithValue("@gender", employeeModel.gender);
-                    cmd.Parameters.AddWithValue("@department", employeeModel.department);
-                    cmd.Parameters.AddWithValue("@salary", employeeModel.salary);
-                    cmd.Parameters.AddWithValue("@startDate", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@notes", employeeModel.notes);
+                    cmd.Parameters.AddWithValue("@EmployeeName", employeeModel.EmployeeName);
+                    cmd.Parameters.AddWithValue("@ProfileImg", employeeModel.ProfileImg);
+                    cmd.Parameters.AddWithValue("@Gender", employeeModel.Gender);
+                    cmd.Parameters.AddWithValue("@Department", employeeModel.Department);
+                    cmd.Parameters.AddWithValue("@Salary", employeeModel.Salary);
+                    cmd.Parameters.AddWithValue("@StartDate", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@Notes", employeeModel.Notes);
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -50,7 +50,7 @@ namespace RepositoryLayer.Services
                 {
                     SqlCommand cmd = new SqlCommand("deleteEmployeeDetails", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@empId", employeeModel.empId);
+                    cmd.Parameters.AddWithValue("@EmployeeId", employeeModel.EmployeeId);
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -77,14 +77,14 @@ namespace RepositoryLayer.Services
                     {
                         EmployeeModel employeeModel = new EmployeeModel()
                         {
-                            empId = Convert.ToInt32(dr["empId"]),
-                            empName = dr["empName"].ToString(),
-                            profileImg = dr["profileImg"].ToString(),
-                            gender = dr["gender"].ToString(),
-                            department = dr["department"].ToString(),
-                            salary = Convert.ToInt32(dr["salary"]),
-                            startDate = Convert.ToDateTime(dr["startDate"]),
-                            notes = dr["notes"].ToString()
+                            EmployeeId = Convert.ToInt32(dr["EmployeeId"]),
+                            EmployeeName = dr["EmployeeName"].ToString(),
+                            ProfileImg = dr["ProfileImg"].ToString(),
+                            Gender = dr["Gender"].ToString(),
+                            Department = dr["Department"].ToString(),
+                            Salary = Convert.ToInt32(dr["Salary"]),
+                            StartDate = Convert.ToDateTime(dr["StartDate"]),
+                            Notes = dr["Notes"].ToString()
                         };
                         employees.Add(employeeModel);
                     }
@@ -105,20 +105,20 @@ namespace RepositoryLayer.Services
                 EmployeeModel employeeModel = new EmployeeModel();
                 using (SqlConnection con = new SqlConnection(this.configuration.GetConnectionString("EmployeePayroll_MVC")))
                 {
-                    string sqlQuery = "SELECT * FROM EmployeeDetails WHERE empId= " + id;
+                    string sqlQuery = "SELECT * FROM EmployeeDetails WHERE EmployeeId= " + id;
                     SqlCommand cmd = new SqlCommand(sqlQuery, con);
                     con.Open();
                     SqlDataReader dr = cmd.ExecuteReader();
                     while(dr.Read())
                     {
-                        employeeModel.empId = Convert.ToInt32(dr["empId"]);
-                        employeeModel.empName = dr["empName"].ToString();
-                        employeeModel.profileImg = dr["profileImg"].ToString();
-                        employeeModel.gender = dr["gender"].ToString();
-                        employeeModel.department = dr["department"].ToString();
-                        employeeModel.salary = Convert.ToInt32(dr["salary"]);
-                        employeeModel.startDate = Convert.ToDateTime(dr["startDate"]);
-                        employeeModel.notes = dr["notes"].ToString();
+                        employeeModel.EmployeeId = Convert.ToInt32(dr["EmployeeId"]);
+                        employeeModel.EmployeeName = dr["EmployeeName"].ToString();
+                        employeeModel.ProfileImg = dr["ProfileImg"].ToString();
+                        employeeModel.Gender = dr["Gender"].ToString();
+                        employeeModel.Department = dr["Department"].ToString();
+                        employeeModel.Salary = Convert.ToInt32(dr["Salary"]);
+                        employeeModel.StartDate = Convert.ToDateTime(dr["StartDate"]);
+                        employeeModel.Notes = dr["Notes"].ToString();
                     }
                     con.Close();
                 }
@@ -138,14 +138,14 @@ namespace RepositoryLayer.Services
                 {
                     SqlCommand cmd = new SqlCommand("updateEmployeeDetails", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@empId", employeeModel.empId);
-                    cmd.Parameters.AddWithValue("@empName", employeeModel.empName);
-                    cmd.Parameters.AddWithValue("@profileImg", employeeModel.profileImg);
-                    cmd.Parameters.AddWithValue("@gender", employeeModel.gender);
-                    cmd.Parameters.AddWithValue("@department", employeeModel.department);
-                    cmd.Parameters.AddWithValue("@salary", employeeModel.salary);
-                    cmd.Parameters.AddWithValue("@startDate", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@notes", employeeModel.notes);
+                    cmd.Parameters.AddWithValue("@EmployeeId", employeeModel.EmployeeId);
+                    cmd.Parameters.AddWithValue("@EmployeeName", employeeModel.EmployeeName);
+                    cmd.Parameters.AddWithValue("@ProfileImg", employeeModel.ProfileImg);
+                    cmd.Parameters.AddWithValue("@Gender", employeeModel.Gender);
+                    cmd.Parameters.AddWithValue("@Department", employeeModel.Department);
+                    cmd.Parameters.AddWithValue("@Salary", employeeModel.Salary);
+                    cmd.Parameters.AddWithValue("@StartDate", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@Notes", employeeModel.Notes);
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();

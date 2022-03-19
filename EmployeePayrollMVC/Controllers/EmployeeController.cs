@@ -45,7 +45,7 @@ namespace EmployeePayrollMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([Bind] EmployeeModel employee)
+        public IActionResult Create(EmployeeModel employee)
         {
             if (ModelState.IsValid)
             {
@@ -72,9 +72,9 @@ namespace EmployeePayrollMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(int id, [Bind] EmployeeModel employeeModel)
+        public IActionResult Edit(int id, EmployeeModel employeeModel)
         {
-            if (id != employeeModel.empId)
+            if (id != employeeModel.EmployeeId)
             {
                 return NotFound();
             }
