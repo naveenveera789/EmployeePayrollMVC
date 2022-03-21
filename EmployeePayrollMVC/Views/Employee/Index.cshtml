@@ -29,10 +29,10 @@
                 @Html.DisplayNameFor(model => model.EmployeeId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EmployeeName)
+                @Html.DisplayNameFor(model => model.ProfileImg)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProfileImg)
+                @Html.DisplayNameFor(model => model.EmployeeName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Gender)
@@ -59,10 +59,10 @@
                 @Html.DisplayFor(modelItem => item.EmployeeId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EmployeeName)
+                <img class="img" src="@Url.Content(item.ProfileImg)" />
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProfileImg)
+                @Html.DisplayFor(modelItem => item.EmployeeName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Gender)
@@ -80,9 +80,9 @@
                 @Html.DisplayFor(modelItem => item.Notes)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.EmployeeId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.EmployeeId }) |
-                @Html.ActionLink("Delete", "Delete", new {  id=item.EmployeeId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.EmployeeId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeId })
             </td>
         </tr>
 }

@@ -36,13 +36,13 @@
             <div class="form-group">
                 <label asp-for="ProfileImg" class="control-label"></label>
                 <div>
-                    @Html.RadioButtonFor(model => model.ProfileImg, "Male 1")
+                    @Html.RadioButtonFor(model => model.ProfileImg, "~/assets/Male (4).png")
                     <img src="~/assets/Male (4).png" />
-                    @Html.RadioButtonFor(model => model.ProfileImg, "Female 1")
+                    @Html.RadioButtonFor(model => model.ProfileImg, "~/assets/Female (1).png")
                     <img src="~/assets/Female (1).png" />
-                    @Html.RadioButtonFor(model => model.ProfileImg, "Male 2")
+                    @Html.RadioButtonFor(model => model.ProfileImg, "~/assets/Male (5).png")
                     <img src="~/assets/Male (5).png" />
-                    @Html.RadioButtonFor(model => model.ProfileImg, "Female 2")
+                    @Html.RadioButtonFor(model => model.ProfileImg, "~/assets/Female (5).png")
                     <img src="~/assets/Female (5).png" />
                 </div>
                 <span asp-validation-for="ProfileImg" class="text-danger"></span>
